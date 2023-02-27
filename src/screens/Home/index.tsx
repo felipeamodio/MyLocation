@@ -12,6 +12,8 @@ import {
 
 import {styles} from './styles';
 
+import Inputs from '../../components/Inputs';
+
 export default function Home(){
     const [location, setLocation] = useState<LocationObject | null>(null);
 
@@ -42,7 +44,7 @@ export default function Home(){
         }, (response) => {
             setLocation(response);
             mapRef.current?.animateCamera({
-                pitch: 20,
+                pitch: 5,
                 center: response.coords
             })
         })
@@ -69,6 +71,8 @@ export default function Home(){
                 />
             </MapView>
             }
+
+            <Inputs />
         </View>
     )
 }
