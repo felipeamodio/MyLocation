@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import {View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 
 import {
