@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 
 import {
@@ -11,8 +11,6 @@ import {
 } from 'expo-location';
 
 import {styles} from './styles';
-
-import Inputs from '../../components/Inputs';
 
 export default function Home(){
     const [location, setLocation] = useState<LocationObject | null>(null);
@@ -72,7 +70,28 @@ export default function Home(){
             </MapView>
             }
 
-            <Inputs />
+            <View style={styles.containerInputs}>
+                <TextInput 
+                    style={styles.input}
+                    value={location}
+                    placeholder={`${location?.timestamp}`}
+                    placeholderTextColor="#FFFFFF"
+                    onChangeText={() => {}}
+                />
+
+                <TextInput 
+                    style={[styles.input, {marginTop: 15}]}
+                    value={location}
+                    placeholder={`${location}`}
+                    placeholderTextColor="#FFFFFF"
+                    onChangeText={() => {}}
+                />
+
+            <TouchableOpacity style={styles.button}>
+                <Text style={styles.labelButton}>Go!</Text>
+            </TouchableOpacity>
+            </View>
+
         </View>
     )
 }
