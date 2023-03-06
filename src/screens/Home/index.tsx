@@ -45,6 +45,7 @@ export default function Home(){
                 pitch: 5,
                 center: response.coords
             })
+            console.tron.log('AQUI =>', mapRef.current)
         })
     }, [])
 
